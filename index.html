@@ -8,33 +8,20 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Full page watermark background */
+    /* Body with background logo as watermark */
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f6f8; /* fallback */
-      position: relative;
-      color: #fff;
+      background: url('assets/logo.JPG') no-repeat center top;
+      background-size: 40%; /* smaller logo */
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #333;
       line-height: 1.6;
-      overflow-x: hidden;
+      position: relative;
+      background-color: #f4f6f8; /* fallback */
     }
 
-    /* Watermark logo using pseudo-element */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%; /* logo size */
-      height: auto;
-      background: url('assets/logo.JPG') no-repeat center center;
-      background-size: contain;
-      opacity: 0.1; /* subtle watermark */
-      z-index: 0;
-      pointer-events: none; /* allow clicking text over it */
-    }
-
-    /* Make content above watermark */
+    /* Content container */
     .content {
       position: relative;
       z-index: 1;
@@ -60,8 +47,7 @@
     nav a:hover { background-color: #2980b9; }
 
     .section {
-      background-color: rgba(255,255,255,0.95);
-      color: #333;
+      background-color: rgba(255,255,255,0.85); /* semi-transparent */
       border-radius: 12px;
       padding: 25px 30px;
       margin: 20px 0;
@@ -71,7 +57,7 @@
     h2 {
       margin-bottom: 15px;
       color: #2c3e50;
-      text-align: center;
+      text-align: center; /* centered headings */
     }
 
     ul { list-style: none; padding-left: 0; }
