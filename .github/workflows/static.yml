@@ -1,0 +1,25 @@
+name: Deploy OpowerGYM Rules Site
+
+on:
+  push:
+    branches:
+      - main  # triggers on push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js (optional, only if you plan to use JS tools)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v6
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # root folder containing your index.html
