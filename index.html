@@ -1,250 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opower GYM Rules / قوانين الصالة الرياضية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opower GYM Rules / قوانين الصالة الرياضية</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f6f8;
-      position: relative;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+              url('assets/logo.JPG') no-repeat center center;
+  background-size: 40%; /* logo size */
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+}
 
-    /* Watermark logo */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-      height: auto;
-      background: url('assets/logo.JPG') no-repeat center center;
-      background-size: contain;
-      opacity: 0.1;
-      filter: blur(2px);
-      z-index: 0;
-      pointer-events: none;
-    }
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
 
-    .content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+header h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
 
-    header h1 {
-      font-size: 2.5em;
-      color: #2c3e50;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
+nav {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    nav {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+nav a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
 
-    nav a {
-      margin: 0 10px;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
+nav a:hover { background-color: #2980b9; }
 
-    nav a:hover { background-color: #2980b9; }
+.section {
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  padding: 30px 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-    .section {
-      background-color: rgba(255,255,255,0.95);
-      border-radius: 15px;
-      padding: 30px 35px;
-      margin-bottom: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
+ul { list-style: none; padding-left: 0; }
 
-    ul { list-style: none; padding-left: 0; }
+.english-section li, .arabic-section li {
+  position: relative;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards;
+}
 
-    /* English checkmarks on the left */
-    .english-section li {
-      position: relative;
-      padding-left: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.6s forwards;
-    }
-    .english-section li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #27ae60;
-      font-weight: bold;
-      line-height: 1.6;
-    }
+/* English checkmarks on the left */
+.english-section li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #27ae60;
+  font-weight: bold;
+  line-height: 1.6;
+}
 
-    /* Arabic checkmarks on the right */
-    .arabic-section li {
-      direction: rtl;
-      text-align: right;
-      padding-right: 20px;
-      position: relative;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.6s forwards;
-    }
-    .arabic-section li::before {
-      content: "✔";
-      position: absolute;
-      right: 0;
-      top: 0;
-      color: #27ae60;
-      font-weight: bold;
-      line-height: 1.6;
-    }
+/* Arabic checkmarks on the right */
+.arabic-section li {
+  direction: rtl;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 0;
+}
+.arabic-section li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #27ae60;
+  font-weight: bold;
+  line-height: 1.6;
+}
 
-    li { margin: 12px 0; }
+li { margin: 12px 0; }
 
-    .note {
-      margin-top: 25px;
-      font-style: italic;
-      text-align: center;
-      color: #555;
-    }
+.note {
+  margin-top: 25px;
+  font-style: italic;
+  text-align: center;
+  color: #555;
+}
 
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    /* Stagger animation for list items */
-    .arabic-section li:nth-child(1),
-    .english-section li:nth-child(1) { animation-delay: 0.1s; }
-    .arabic-section li:nth-child(2),
-    .english-section li:nth-child(2) { animation-delay: 0.2s; }
-    .arabic-section li:nth-child(3),
-    .english-section li:nth-child(3) { animation-delay: 0.3s; }
-    .arabic-section li:nth-child(4),
-    .english-section li:nth-child(4) { animation-delay: 0.4s; }
-    .arabic-section li:nth-child(5),
-    .english-section li:nth-child(5) { animation-delay: 0.5s; }
-    .arabic-section li:nth-child(6),
-    .english-section li:nth-child(6) { animation-delay: 0.6s; }
-    .arabic-section li:nth-child(7),
-    .english-section li:nth-child(7) { animation-delay: 0.7s; }
-    .arabic-section li:nth-child(8),
-    .english-section li:nth-child(8) { animation-delay: 0.8s; }
-    .arabic-section li:nth-child(9),
-    .english-section li:nth-child(9) { animation-delay: 0.9s; }
-    .arabic-section li:nth-child(10),
-    .english-section li:nth-child(10) { animation-delay: 1s; }
-    .arabic-section li:nth-child(11),
-    .english-section li:nth-child(11) { animation-delay: 1.1s; }
-    .arabic-section li:nth-child(12),
-    .english-section li:nth-child(12) { animation-delay: 1.2s; }
-    .arabic-section li:nth-child(13),
-    .english-section li:nth-child(13) { animation-delay: 1.3s; }
-    .arabic-section li:nth-child(14),
-    .english-section li:nth-child(14) { animation-delay: 1.4s; }
-    .arabic-section li:nth-child(15),
-    .english-section li:nth-child(15) { animation-delay: 1.5s; }
-    .arabic-section li:nth-child(16),
-    .english-section li:nth-child(16) { animation-delay: 1.6s; }
-    .arabic-section li:nth-child(17),
-    .english-section li:nth-child(17) { animation-delay: 1.7s; }
-    .arabic-section li:nth-child(18),
-    .english-section li:nth-child(18) { animation-delay: 1.8s; }
+/* Stagger animations */
+.arabic-section li:nth-child(n), .english-section li:nth-child(n) {
+  animation-delay: calc(0.1s * var(--i));
+}
 
-    @media(max-width: 600px){
-      header h1 { font-size: 2em; }
-      nav a { display: block; margin: 10px auto; width: 60%; }
-      .section { padding: 20px; margin: 15px; }
-    }
-  </style>
+@media(max-width: 600px){
+  header h1 { font-size: 2em; }
+  nav a { display: block; margin: 10px auto; width: 60%; }
+  .section { padding: 20px; margin: 15px; }
+}
+</style>
 </head>
 <body>
-  <div class="content">
-    <header>
-      <h1>📋 Opower GYM Rules 💪 / قوانين الصالة الرياضية</h1>
-    </header>
+<div class="content">
+<header>
+  <h1>📋 Opower GYM Rules 💪 / قوانين الصالة الرياضية</h1>
+</header>
 
-    <nav>
-      <a href="#arabic">العربية</a>
-      <a href="#english">English</a>
-    </nav>
+<nav>
+  <a href="#arabic">العربية</a>
+  <a href="#english">English</a>
+</nav>
 
-    <!-- Arabic Rules -->
-    <div id="arabic" class="section arabic-section">
-      <h2>القوانين بالعربية</h2>
-      <ul>
-        <li>الاحترام بما تحملة الكلمة من معنى وتقبل الاخرين ومساندتهم.</li>
-        <li>الحفاظ على الأدوات والمرافق والاستخدام الصحيح لها.</li>
-        <li>إرجاع جميع الادوات الى اماكنها الصحيحة و الحفاظ على نظافة المكان.</li>
-        <li>يمنع تغير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
-        <li>التقيد بالملابس الرياضية المتعارف عليها والحذاء الرياضي.</li>
-        <li>يلتزم المستخدم بنظافته الشخصيه، والتي قد تنبعث منها روائح غير مرغوبة.</li>
-        <li>لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال، ولا تتحمل الادارة أية مسؤوليه.</li>
-        <li>إرجاع مفتاح الخزائن الى الادارة بعد إنتهاء التمرين، وفى حالة فقدان المفتاح سيترتب دفع رسوم.</li>
-        <li>الإدارة تخلى مسؤليتها عن فقدان ممتلكات ثمينه كذالك يمنع تصوير الآخرين بدون إذن منهم.</li>
-        <li>من الممكن قبول الأطفال من سن ١٤ عام وما فوق شرط توقيع ولي الأمر بتحمل المسؤليه.</li>
-        <li>مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك الى شخص اخر.</li>
-        <li>ممنوع منعاً باتاً التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
-        <li>الصالة لا تتحمل مسؤولية تعاطي المنشطات.</li>
-        <li>الصالة تخلى مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
-        <li>يمنع الصراخ ورفع الصوت وعمل إزعاج للأعضاء الآخرين.</li>
-        <li>يوجد أجهزة مراقبة داخل الصالة الرياضية.</li>
-        <li>التعمد في مخالفة قوانين الصالة الرياضية يحق للصالة الغاء الاشتراك وارجاع جزء من المبلغ.</li>
-        <li>لا يسمح بإدخال أشخاص لا يوجد لديهم عضوية ويمنع إصطحاب الاطفال داخل الصالة.</li>
-      </ul>
-      <p class="note">شكراً لإلتزامكم بالقوانين ومساعدتنا في الحفاظ على سلامة واستمتاع جميع أعضاء Opower GYM!</p>
-    </div>
+<div id="arabic" class="section arabic-section">
+  <h2>القوانين بالعربية</h2>
+  <ul>
+    <li style="--i:1">الاحترام بما تحملة الكلمة من معنى وتقبل الاخرين ومساندتهم.</li>
+    <li style="--i:2">الحفاظ على الأدوات والمرافق والاستخدام الصحيح لها.</li>
+    <li style="--i:3">إرجاع جميع الادوات الى اماكنها الصحيحة و الحفاظ على نظافة المكان.</li>
+    <li style="--i:4">يمنع تغير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
+    <li style="--i:5">التقيد بالملابس الرياضية المتعارف عليها والحذاء الرياضي.</li>
+    <li style="--i:6">يلتزم المستخدم بنظافته الشخصيه، والتي قد تنبعث منها روائح غير مرغوبة.</li>
+    <li style="--i:7">لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال، ولا تتحمل الادارة أية مسؤوليه.</li>
+    <li style="--i:8">إرجاع مفتاح الخزائن الى الادارة بعد إنتهاء التمرين، وفى حالة فقدان المفتاح سيترتب دفع رسوم.</li>
+    <li style="--i:9">الإدارة تخلى مسؤليتها عن فقدان ممتلكات ثمينه كذالك يمنع تصوير الآخرين بدون إذن منهم.</li>
+    <li style="--i:10">من الممكن قبول الأطفال من سن ١٤ عام وما فوق شرط توقيع ولي الأمر بتحمل المسؤليه.</li>
+    <li style="--i:11">مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك الى شخص اخر.</li>
+    <li style="--i:12">ممنوع منعاً باتاً التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
+    <li style="--i:13">الصالة لا تتحمل مسؤولية تعاطي المنشطات.</li>
+    <li style="--i:14">الصالة تخلى مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
+    <li style="--i:15">يمنع الصراخ ورفع الصوت وعمل إزعاج للأعضاء الآخرين.</li>
+    <li style="--i:16">يوجد أجهزة مراقبة داخل الصالة الرياضية.</li>
+    <li style="--i:17">التعمد في مخالفة قوانين الصالة الرياضية يحق للصالة الغاء الاشتراك وارجاع جزء من المبلغ.</li>
+    <li style="--i:18">لا يسمح بإدخال أشخاص لا يوجد لديهم عضوية ويمنع إصطحاب الاطفال داخل الصالة.</li>
+  </ul>
+  <p class="note">شكراً لإلتزامكم بالقوانين ومساعدتنا في الحفاظ على سلامة واستمتاع جميع أعضاء Opower GYM!</p>
+</div>
 
-    <!-- English Rules -->
-    <div id="english" class="section english-section">
-      <h2>Rules in English</h2>
-      <ul>
-        <li>Respect everyone and support other members.</li>
-        <li>Take care of equipment and facilities.</li>
-        <li>Return all equipment to its proper place and keep the gym clean.</li>
-        <li>Do not change or control speakers, AC, or TV settings.</li>
-        <li>Wear proper sportswear and athletic shoes.</li>
-        <li>Maintain personal hygiene.</li>
-        <li>Do not leave personal items at reception.</li>
-        <li>Return locker keys after your workout; a fee applies for lost keys.</li>
-        <li>The gym is not responsible for valuables; filming others without permission is prohibited.</li>
-        <li>Children aged 14+ may join with guardian consent.</li>
-        <li>Membership fees are non-refundable and non-transferable.</li>
-        <li>Smoking or chewing tobacco is prohibited.</li>
-        <li>The gym is not responsible for use of performance enhancers.</li>
-        <li>The gym is not responsible for injuries or damages during training.</li>
-        <li>Avoid shouting or disturbing others.</li>
-        <li>Security cameras are installed.</li>
-        <li>Violating rules may result in membership cancellation with partial refund.</li>
-        <li>Non-members and children are not allowed inside the gym.</li>
-      </ul>
-      <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
-    </div>
-  </div>
+<div id="english" class="section english-section">
+  <h2>Rules in English</h2>
+  <ul>
+    <li style="--i:1">Respect everyone and support other members.</li>
+    <li style="--i:2">Take care of equipment and facilities.</li>
+    <li style="--i:3">Return all equipment to its proper place and keep the gym clean.</li>
+    <li style="--i:4">Do not change or control speakers, AC, or TV settings.</li>
+    <li style="--i:5">Wear proper sportswear and athletic shoes.</li>
+    <li style="--i:6">Maintain personal hygiene.</li>
+    <li style="--i:7">Do not leave personal items at reception.</li>
+    <li style="--i:8">Return locker keys after your workout; a fee applies for lost keys.</li>
+    <li style="--i:9">The gym is not responsible for valuables; filming others without permission is prohibited.</li>
+    <li style="--i:10">Children aged 14+ may join with guardian consent.</li>
+    <li style="--i:11">Membership fees are non-refundable and non-transferable.</li>
+    <li style="--i:12">Smoking or chewing tobacco is prohibited.</li>
+    <li style="--i:13">The gym is not responsible for use of performance enhancers.</li>
+    <li style="--i:14">The gym is not responsible for injuries or damages during training.</li>
+    <li style="--i:15">Avoid shouting or disturbing others.</li>
+    <li style="--i:16">Security cameras are installed.</li>
+    <li style="--i:17">Violating rules may result in membership cancellation with partial refund.</li>
+    <li style="--i:18">Non-members and children are not allowed inside the gym.</li>
+  </ul>
+  <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
+</div>
+</div>
 </body>
 </html>
