@@ -12,12 +12,12 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #222; /* darker text */
+  color: #222;
   line-height: 1.6;
-  background-color: #1b1b1b; /* dark background */
+  background-color: #1b1b1b;
 }
 
-/* Hero header with subtle parallax */
+/* Hero header */
 header.hero {
   position: relative;
   width: 100%;
@@ -30,25 +30,28 @@ header.hero {
   background: url('assets/logo.JPG') no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
-  filter: brightness(0.6); /* darker overlay */
+  filter: brightness(0.6);
 }
 
 header.hero::before {
   content: '';
   position: absolute;
   top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.5); /* semi-transparent dark overlay */
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
+/* Header text with semi-transparent background for clarity */
 header.hero h1 {
   position: relative;
   z-index: 2;
   font-size: 2.5em;
   font-weight: 700;
-  color: #f4f4f4; /* lighter for contrast */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  padding: 0 20px;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
 }
 
 /* Content area */
@@ -67,7 +70,7 @@ nav {
 nav a {
   margin: 0 10px;
   padding: 10px 20px;
-  background-color: #333; /* darker button */
+  background-color: #333;
   color: #f4f4f4;
   border-radius: 8px;
   text-decoration: none;
@@ -81,7 +84,7 @@ nav a:hover {
 }
 
 .section {
-  background-color: #2a2a2a; /* darker card */
+  background-color: #2a2a2a;
   border-radius: 15px;
   padding: 30px 35px;
   margin-bottom: 30px;
@@ -97,7 +100,7 @@ nav a:hover {
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #f4f4f4; /* lighter heading */
+  color: #f4f4f4;
   border-bottom: 3px solid #f4f4f4;
   display: inline-block;
   padding-bottom: 5px;
@@ -111,7 +114,7 @@ ul { list-style: none; padding-left: 0; }
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 0.6s forwards;
-  color: #ddd; /* lighter text on dark card */
+  color: #ddd;
   transition: transform 0.2s, color 0.2s;
 }
 
@@ -165,7 +168,7 @@ li { margin: 12px 0; }
 }
 
 @media(max-width: 600px){
-  header.hero h1 { font-size: 2em; }
+  header.hero h1 { font-size: 2em; padding: 12px 18px; }
   nav a { display: block; margin: 10px auto; width: 60%; }
   .section { padding: 20px; margin: 15px; }
 }
@@ -223,18 +226,4 @@ li { margin: 12px 0; }
     <li style="--i:8">Return locker keys after your workout; a fee applies for lost keys.</li>
     <li style="--i:9">The gym is not responsible for valuables; filming others without permission is prohibited.</li>
     <li style="--i:10">Children aged 14+ may join with guardian consent.</li>
-    <li style="--i:11">Membership fees are non-refundable and non-transferable.</li>
-    <li style="--i:12">Smoking or chewing tobacco is prohibited.</li>
-    <li style="--i:13">The gym is not responsible for use of performance enhancers.</li>
-    <li style="--i:14">The gym is not responsible for injuries or damages during training.</li>
-    <li style="--i:15">Avoid shouting or disturbing others.</li>
-    <li style="--i:16">Security cameras are installed.</li>
-    <li style="--i:17">Violating rules may result in membership cancellation with partial refund.</li>
-    <li style="--i:18">Non-members and children are not allowed inside the gym.</li>
-  </ul>
-  <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
-</div>
-
-</div>
-</body>
-</html>
+    <li style="--i:11">Members
