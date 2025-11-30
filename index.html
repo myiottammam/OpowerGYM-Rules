@@ -109,8 +109,10 @@ h2 {
 ul { list-style: none; padding-left: 0; }
 
 .english-section li, .arabic-section li {
-  position: relative;
-  padding-left: 20px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px; /* space between checkmark and text */
+  padding: 5px 0;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 0.6s forwards;
@@ -123,31 +125,16 @@ ul { list-style: none; padding-left: 0; }
   color: #f4f4f4;
 }
 
-.english-section li::before {
+.english-section li::before, .arabic-section li::before {
   content: "✔";
-  position: absolute;
-  left: 0;
-  top: 0;
   color: #27ae60;
   font-weight: bold;
-  line-height: 1.6;
+  flex-shrink: 0;
 }
 
 .arabic-section li {
   direction: rtl;
   text-align: right;
-  padding-right: 20px;
-  padding-left: 0;
-}
-
-.arabic-section li::before {
-  content: "✔";
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: #27ae60;
-  font-weight: bold;
-  line-height: 1.6;
 }
 
 li { margin: 12px 0; }
@@ -177,7 +164,7 @@ li { margin: 12px 0; }
 <body>
 
 <header class="hero">
-  <h1>📋 Opower GYM Rules 💪 قوانين الصالة الرياضية 📋 </h1>
+  <h1>📋 Opower GYM Rules 💪 / قوانين الصالة الرياضية</h1>
 </header>
 
 <div class="content">
