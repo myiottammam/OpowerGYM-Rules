@@ -41,7 +41,7 @@ header.hero::before {
   z-index: 1;
 }
 
-/* Header text with semi-transparent background for clarity */
+/* Header text */
 header.hero h1 {
   position: relative;
   z-index: 2;
@@ -108,10 +108,15 @@ h2 {
 
 ul { list-style: none; padding-left: 0; }
 
-/* English list */
+/* English rules */
+.english-section ul {
+  text-align: left; /* align English rules to the left */
+  padding-left: 0;
+}
+
 .english-section li {
   position: relative;
-  padding-left: 18px; /* reduce padding to bring checkmark closer */
+  padding-left: 18px; /* closer checkmark like Arabic */
   color: #ddd;
   opacity: 0;
   transform: translateY(20px);
@@ -122,19 +127,19 @@ ul { list-style: none; padding-left: 0; }
 .english-section li::before {
   content: "✔";
   position: absolute;
-  left: 0;  /* aligned at the start of li */
+  left: 0;
   top: 0;
   color: #27ae60;
   font-weight: bold;
   line-height: 1.6;
 }
 
-/* Arabic list */
+/* Arabic rules */
 .arabic-section li {
   position: relative;
   direction: rtl;
   text-align: right;
-  padding-right: 25px; /* space for checkmark */
+  padding-right: 18px; /* spacing for checkmark */
   color: #ddd;
   opacity: 0;
   transform: translateY(20px);
