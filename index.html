@@ -10,34 +10,67 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-              url('assets/logo.JPG') no-repeat center center;
-  background-size: 40%; /* logo size */
-  background-attachment: fixed;
+  background-color: #f4f6f8;
   color: #333;
   line-height: 1.6;
 }
 
+/* Hero header with background logo */
+header.hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: url('assets/logo.JPG') no-repeat center center;
+  background-size: contain;
+  opacity: 0.15;
+  filter: blur(3px);
+  z-index: 1;
+}
+
+header.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85));
+  z-index: 2;
+}
+
+header.hero h1 {
+  position: relative;
+  z-index: 3;
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+  padding: 0 20px;
+}
+
+/* Content area */
 .content {
   max-width: 900px;
   margin: auto;
   padding: 30px 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: #2c3e50;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
 nav {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 nav a {
@@ -118,29 +151,32 @@ li { margin: 12px 0; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Stagger animations */
+/* Stagger animation for list items */
 .arabic-section li:nth-child(n), .english-section li:nth-child(n) {
   animation-delay: calc(0.1s * var(--i));
 }
 
 @media(max-width: 600px){
-  header h1 { font-size: 2em; }
+  header.hero h1 { font-size: 2em; }
   nav a { display: block; margin: 10px auto; width: 60%; }
   .section { padding: 20px; margin: 15px; }
 }
 </style>
 </head>
 <body>
-<div class="content">
-<header>
+
+<header class="hero">
+  <div class="overlay"></div>
   <h1>📋 Opower GYM Rules 💪 / قوانين الصالة الرياضية</h1>
 </header>
 
+<div class="content">
 <nav>
   <a href="#arabic">العربية</a>
   <a href="#english">English</a>
 </nav>
 
+<!-- Arabic Rules -->
 <div id="arabic" class="section arabic-section">
   <h2>القوانين بالعربية</h2>
   <ul>
@@ -166,6 +202,7 @@ li { margin: 12px 0; }
   <p class="note">شكراً لإلتزامكم بالقوانين ومساعدتنا في الحفاظ على سلامة واستمتاع جميع أعضاء Opower GYM!</p>
 </div>
 
+<!-- English Rules -->
 <div id="english" class="section english-section">
   <h2>Rules in English</h2>
   <ul>
@@ -190,6 +227,7 @@ li { margin: 12px 0; }
   </ul>
   <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
 </div>
+
 </div>
 </body>
 </html>
