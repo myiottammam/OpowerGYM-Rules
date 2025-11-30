@@ -8,6 +8,8 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #111;
@@ -26,8 +28,8 @@ header.hero {
   text-align: center;
   overflow: hidden;
   background: url('assets/logo.JPG') no-repeat center center;
-  background-size: 40%;
-  background-attachment: fixed; /* parallax effect */
+  background-size: cover;
+  background-attachment: scroll; /* better for mobile */
   filter: brightness(0.9);
 }
 
@@ -35,7 +37,7 @@ header.hero::before {
   content: '';
   position: absolute;
   top:0; left:0; width:100%; height:100%;
-  background: rgba(255,255,255,0.85); /* semi-transparent overlay for readability */
+  background: rgba(255,255,255,0.85);
   z-index: 1;
 }
 
@@ -44,7 +46,7 @@ header.hero h1 {
   z-index: 2;
   font-size: 2.5em;
   font-weight: 700;
-  color: #c1272d; /* red from logo */
+  color: #c1272d;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   padding: 0 20px;
 }
@@ -54,6 +56,7 @@ header.hero h1 {
   max-width: 900px;
   margin: auto;
   padding: 30px 20px;
+  text-align: center; /* center content */
 }
 
 nav {
@@ -64,15 +67,18 @@ nav {
 nav a {
   margin: 0 10px;
   padding: 10px 20px;
-  background-color: #c1272d; /* red from logo */
+  background-color: #c1272d;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
-nav a:hover { background-color: #8b1a20; }
+nav a:hover {
+  background-color: #8b1a20;
+  transform: scale(1.05);
+}
 
 .section {
   background-color: rgba(255,255,255,0.95);
@@ -80,6 +86,12 @@ nav a:hover { background-color: #8b1a20; }
   padding: 30px 35px;
   margin-bottom: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s; /* hover effect */
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 h2 {
@@ -100,6 +112,12 @@ ul { list-style: none; padding-left: 0; }
   transform: translateY(20px);
   animation: fadeIn 0.6s forwards;
   color: #111;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.english-section li:hover, .arabic-section li:hover {
+  transform: translateX(5px);
+  color: #c1272d;
 }
 
 /* English checkmarks on the left */
@@ -170,24 +188,24 @@ li { margin: 12px 0; }
 <div id="arabic" class="section arabic-section">
   <h2>القوانين بالعربية</h2>
   <ul>
-    <li style="--i:1">الاحترام بما تحملة الكلمة من معنى وتقبل الاخرين ومساندتهم.</li>
+    <li style="--i:1">الاحترام بما تحمله الكلمة من معنى وتقبل الآخرين ومساندتهم.</li>
     <li style="--i:2">الحفاظ على الأدوات والمرافق والاستخدام الصحيح لها.</li>
-    <li style="--i:3">إرجاع جميع الادوات الى اماكنها الصحيحة و الحفاظ على نظافة المكان.</li>
-    <li style="--i:4">يمنع تغير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
+    <li style="--i:3">إرجاع جميع الأدوات إلى أماكنها الصحيحة والحفاظ على نظافة المكان.</li>
+    <li style="--i:4">يمنع تغيير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
     <li style="--i:5">التقيد بالملابس الرياضية المتعارف عليها والحذاء الرياضي.</li>
-    <li style="--i:6">يلتزم المستخدم بنظافته الشخصيه، والتي قد تنبعث منها روائح غير مرغوبة.</li>
-    <li style="--i:7">لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال، ولا تتحمل الادارة أية مسؤوليه.</li>
-    <li style="--i:8">إرجاع مفتاح الخزائن الى الادارة بعد إنتهاء التمرين، وفى حالة فقدان المفتاح سيترتب دفع رسوم.</li>
-    <li style="--i:9">الإدارة تخلى مسؤليتها عن فقدان ممتلكات ثمينه كذالك يمنع تصوير الآخرين بدون إذن منهم.</li>
-    <li style="--i:10">من الممكن قبول الأطفال من سن ١٤ عام وما فوق شرط توقيع ولي الأمر بتحمل المسؤليه.</li>
-    <li style="--i:11">مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك الى شخص اخر.</li>
-    <li style="--i:12">ممنوع منعاً باتاً التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
+    <li style="--i:6">يلتزم المستخدم بالنظافة الشخصية.</li>
+    <li style="--i:7">لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال.</li>
+    <li style="--i:8">إرجاع مفتاح الخزائن بعد الانتهاء؛ وفي حالة فقدان المفتاح سيترتب دفع رسوم.</li>
+    <li style="--i:9">الإدارة تخلي مسؤوليتها عن فقدان ممتلكات ثمينة، ويمنع تصوير الآخرين بدون إذن منهم.</li>
+    <li style="--i:10">يُقبل الأطفال من سن 14 عامًا وما فوق شرط توقيع ولي الأمر.</li>
+    <li style="--i:11">مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك لشخص آخر.</li>
+    <li style="--i:12">ممنوع التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
     <li style="--i:13">الصالة لا تتحمل مسؤولية تعاطي المنشطات.</li>
-    <li style="--i:14">الصالة تخلى مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
-    <li style="--i:15">يمنع الصراخ ورفع الصوت وعمل إزعاج للأعضاء الآخرين.</li>
+    <li style="--i:14">الصالة تخلي مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
+    <li style="--i:15">يمنع الصراخ وإزعاج الأعضاء الآخرين.</li>
     <li style="--i:16">يوجد أجهزة مراقبة داخل الصالة الرياضية.</li>
-    <li style="--i:17">التعمد في مخالفة قوانين الصالة الرياضية يحق للصالة الغاء الاشتراك وارجاع جزء من المبلغ.</li>
-    <li style="--i:18">لا يسمح بإدخال أشخاص لا يوجد لديهم عضوية ويمنع إصطحاب الاطفال داخل الصالة.</li>
+    <li style="--i:17">التعمد في مخالفة القوانين يحق للصالة إلغاء الاشتراك مع استرداد جزء من المبلغ.</li>
+    <li style="--i:18">لا يسمح بإدخال أشخاص بدون عضوية ويمنع اصطحاب الأطفال.</li>
   </ul>
   <p class="note">شكراً لإلتزامكم بالقوانين ومساعدتنا في الحفاظ على سلامة واستمتاع جميع أعضاء Opower GYM!</p>
 </div>
