@@ -7,43 +7,57 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      background-color: #f4f6f8;
-      color: #2c3e50;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
     header {
       text-align: center;
-      margin-bottom: 30px;
+      padding: 40px 20px 20px 20px;
+      background-color: #2c3e50;
+      color: #fff;
     }
     header img {
-      max-width: 150px;
-      margin-bottom: 10px;
-    }
-    h1 {
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-    h2 {
-      margin-top: 30px;
+      max-width: 120px;
       margin-bottom: 15px;
     }
-    ul {
-      list-style-type: decimal;
-      padding-left: 20px;
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
-    ul.arabic {
+    .section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .arabic-section {
+      background-color: #f9e5e5;
       direction: rtl;
       text-align: right;
-      padding-right: 20px;
+    }
+    .english-section {
+      background-color: #e5f0fa;
+      direction: ltr;
+      text-align: left;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.6em;
+      color: #2c3e50;
+    }
+    ul {
+      padding-left: 20px;
     }
     li {
       margin: 10px 0;
+      line-height: 1.5em;
     }
     .note {
-      margin-top: 20px;
       font-style: italic;
+      margin-top: 15px;
       color: #555;
     }
   </style>
@@ -54,50 +68,53 @@
     <h1>📋 Opower GYM Rules 💪</h1>
   </header>
 
-  <h2>القوانين بالعربية</h2>
-  <ul class="arabic">
-    <li>الاحترام بما تحملة الكلمة من معنى وتقبل الاخرين ومساندتهم.</li>
-    <li>الحفاظ على الأدوات والمرافق والاستخدام الصحيح لها.</li>
-    <li>إرجاع جميع الادوات الى اماكنها الصحيحة و الحفاظ على نظافة المكان.</li>
-    <li>يمنع تغير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
-    <li>التقيد بالملابس الرياضية المتعارف عليها والحذاء الرياضي.</li>
-    <li>يلتزم المستخدم بنظافته الشخصيه، والتي قد تنبعث منها روائح غير مرغوبة.</li>
-    <li>لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال، ولا تتحمل الادارة أية مسؤوليه.</li>
-    <li>إرجاع مفتاح الخزائن الى الادارة بعد إنتهاء التمرين، وفى حالة فقدان المفتاح سيترتب دفع رسوم.</li>
-    <li>الإدارة تخلى مسؤليتها عن فقدان ممتلكات ثمينه كذالك يمنع تصوير الآخرين بدون إذن منهم.</li>
-    <li>من الممكن قبول الأطفال من سن ١٤ عام وما فوق شرط توقيع ولي الأمر بتحمل المسؤليه.</li>
-    <li>مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك الى شخص اخر.</li>
-    <li>ممنوع منعاً باتاً التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
-    <li>الصالة لا تتحمل مسؤولية تعاطي المنشطات.</li>
-    <li>الصالة تخلى مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
-    <li>يمنع الصراخ ورفع الصوت وعمل إزعاج للأعضاء الآخرين.</li>
-    <li>يوجد أجهزة مراقبة داخل الصالة الرياضية.</li>
-    <li>التعمد في مخالفة قوانين الصالة الرياضية يحق للصالة الغاء الاشتراك وارجاع جزء من المبلغ.</li>
-    <li>لا يسمح بإدخال أشخاص لا يوجد لديهم عضوية ويمنع إصطحاب الاطفال داخل الصالة.</li>
-  </ul>
+  <div class="section arabic-section">
+    <h2>القوانين بالعربية</h2>
+    <ul>
+      <li>الاحترام بما تحملة الكلمة من معنى وتقبل الاخرين ومساندتهم.</li>
+      <li>الحفاظ على الأدوات والمرافق والاستخدام الصحيح لها.</li>
+      <li>إرجاع جميع الادوات الى اماكنها الصحيحة و الحفاظ على نظافة المكان.</li>
+      <li>يمنع تغير والتحكم بمكبرات الصوت، والتكيف، والتلفاز.</li>
+      <li>التقيد بالملابس الرياضية المتعارف عليها والحذاء الرياضي.</li>
+      <li>يلتزم المستخدم بنظافته الشخصيه، والتي قد تنبعث منها روائح غير مرغوبة.</li>
+      <li>لا يسمح بترك أية ممتلكات شخصية لدى الاستقبال، ولا تتحمل الادارة أية مسؤوليه.</li>
+      <li>إرجاع مفتاح الخزائن الى الادارة بعد إنتهاء التمرين، وفى حالة فقدان المفتاح سيترتب دفع رسوم.</li>
+      <li>الإدارة تخلى مسؤليتها عن فقدان ممتلكات ثمينه كذالك يمنع تصوير الآخرين بدون إذن منهم.</li>
+      <li>من الممكن قبول الأطفال من سن ١٤ عام وما فوق شرط توقيع ولي الأمر بتحمل المسؤليه.</li>
+      <li>مبلغ الاشتراك لا يسترجع ولا يمكن إحالة الاشتراك الى شخص اخر.</li>
+      <li>ممنوع منعاً باتاً التدخين ومضغ التبغ في جميع مرافق المبنى.</li>
+      <li>الصالة لا تتحمل مسؤولية تعاطي المنشطات.</li>
+      <li>الصالة تخلى مسؤوليتها عند وقوع أي إصابات أو أضرار للمشتركين.</li>
+      <li>يمنع الصراخ ورفع الصوت وعمل إزعاج للأعضاء الآخرين.</li>
+      <li>يوجد أجهزة مراقبة داخل الصالة الرياضية.</li>
+      <li>التعمد في مخالفة قوانين الصالة الرياضية يحق للصالة الغاء الاشتراك وارجاع جزء من المبلغ.</li>
+      <li>لا يسمح بإدخال أشخاص لا يوجد لديهم عضوية ويمنع إصطحاب الاطفال داخل الصالة.</li>
+    </ul>
+  </div>
 
-  <h2>Rules in English</h2>
-  <ul>
-    <li>Respect everyone and support other members.</li>
-    <li>Take care of equipment and facilities.</li>
-    <li>Return all equipment to its proper place and keep the gym clean.</li>
-    <li>Do not change or control speakers, AC, or TV settings.</li>
-    <li>Wear proper sportswear and athletic shoes.</li>
-    <li>Maintain personal hygiene.</li>
-    <li>Do not leave personal items at reception.</li>
-    <li>Return locker keys after your workout; a fee applies for lost keys.</li>
-    <li>The gym is not responsible for valuables; filming others without permission is prohibited.</li>
-    <li>Children aged 14+ may join with guardian consent.</li>
-    <li>Membership fees are non-refundable and non-transferable.</li>
-    <li>Smoking or chewing tobacco is prohibited.</li>
-    <li>The gym is not responsible for use of performance enhancers.</li>
-    <li>The gym is not responsible for injuries or damages during training.</li>
-    <li>Avoid shouting or disturbing others.</li>
-    <li>Security cameras are installed.</li>
-    <li>Violating rules may result in membership cancellation with partial refund.</li>
-    <li>Non-members and children are not allowed inside the gym.</li>
-  </ul>
-
-  <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
+  <div class="section english-section">
+    <h2>Rules in English</h2>
+    <ul>
+      <li>Respect everyone and support other members.</li>
+      <li>Take care of equipment and facilities.</li>
+      <li>Return all equipment to its proper place and keep the gym clean.</li>
+      <li>Do not change or control speakers, AC, or TV settings.</li>
+      <li>Wear proper sportswear and athletic shoes.</li>
+      <li>Maintain personal hygiene.</li>
+      <li>Do not leave personal items at reception.</li>
+      <li>Return locker keys after your workout; a fee applies for lost keys.</li>
+      <li>The gym is not responsible for valuables; filming others without permission is prohibited.</li>
+      <li>Children aged 14+ may join with guardian consent.</li>
+      <li>Membership fees are non-refundable and non-transferable.</li>
+      <li>Smoking or chewing tobacco is prohibited.</li>
+      <li>The gym is not responsible for use of performance enhancers.</li>
+      <li>The gym is not responsible for injuries or damages during training.</li>
+      <li>Avoid shouting or disturbing others.</li>
+      <li>Security cameras are installed.</li>
+      <li>Violating rules may result in membership cancellation with partial refund.</li>
+      <li>Non-members and children are not allowed inside the gym.</li>
+    </ul>
+    <p class="note">Thank you for following the rules and helping us keep Opower GYM safe and enjoyable!</p>
+  </div>
 </body>
 </html>
