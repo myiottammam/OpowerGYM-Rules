@@ -6,44 +6,58 @@
   <title>Opower GYM Rules</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background-color: #f4f6f8; color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
 
-    /* Header */
-    header { background-color: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; }
-    header img { max-width: 120px; margin-bottom: 15px; border-radius: 10px; }
-    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    /* Hero with logo background */
+    header {
+      position: relative;
+      height: 200px;
+      background: url('assets/logo.JPG') no-repeat center center/cover;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.6); /* semi-transparent overlay for readability */
+      z-index: 0;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.2em;
+      padding: 10px 20px;
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 10px;
+    }
 
     /* Navigation */
     nav { text-align: center; margin: 20px 0; }
     nav a { margin: 0 15px; padding: 10px 20px; background-color: #3498db; color: #fff; border-radius: 5px; transition: background 0.3s; }
     nav a:hover { background-color: #2980b9; }
 
-    /* Section styles */
+    /* Sections */
     .section { max-width: 900px; margin: 30px auto; padding: 25px 30px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); background-color: #fff; transition: transform 0.3s; }
     .section:hover { transform: translateY(-5px); }
 
     h2 { font-size: 1.8em; margin-bottom: 15px; color: #2c3e50; }
     ul { list-style: none; padding-left: 0; }
     li { margin: 12px 0; padding-left: 25px; position: relative; }
-    li::before {
-      content: "✔"; 
-      position: absolute; 
-      left: 0; 
-      color: #27ae60;
-      font-weight: bold;
-    }
+    li::before { content: "✔"; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
+
     .arabic-section { direction: rtl; text-align: right; background-color: #fde2e2; }
     .english-section { direction: ltr; text-align: left; background-color: #e2f0fd; }
 
-    /* Footer note */
     .note { margin-top: 20px; font-style: italic; color: #555; text-align: center; }
 
     /* Responsive */
     @media(max-width: 600px){
-      header h1 { font-size: 1.6em; }
+      header h1 { font-size: 1.6em; padding: 5px 10px; }
       nav a { display: block; margin: 10px 0; }
       .section { padding: 20px; margin: 20px 15px; }
     }
@@ -51,9 +65,8 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with background logo -->
   <header>
-    <img src="assets/logo.JPG" alt="Opower GYM Logo">
     <h1>📋 Opower GYM Rules 💪</h1>
   </header>
 
@@ -63,7 +76,7 @@
     <a href="#english">English</a>
   </nav>
 
-  <!-- Arabic Rules Section -->
+  <!-- Arabic Rules -->
   <div id="arabic" class="section arabic-section">
     <h2>القوانين بالعربية</h2>
     <ul>
@@ -88,7 +101,7 @@
     </ul>
   </div>
 
-  <!-- English Rules Section -->
+  <!-- English Rules -->
   <div id="english" class="section english-section">
     <h2>Rules in English</h2>
     <ul>
