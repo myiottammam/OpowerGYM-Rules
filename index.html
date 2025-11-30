@@ -10,17 +10,16 @@
 
     /* Body with background logo as watermark */
     body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f6f8; /* fallback */
-  background-image: url('assets/logo.JPG');
-  background-repeat: repeat; /* repeat logo across page */
-  background-position: center;
-  background-size: 150px 150px; /* size of each watermark */
-  opacity: 1;
-  color: #333;
-  line-height: 1.6;
-  position: relative;
-}
+      font-family: 'Roboto', sans-serif;
+      background: url('assets/logo.JPG') no-repeat center top;
+      background-size: 40%; /* smaller logo */
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #333;
+      line-height: 1.6;
+      position: relative;
+      background-color: #f4f6f8; /* fallback */
+    }
 
 
     /* Content container */
@@ -81,7 +80,7 @@
 <body>
   <div class="content">
     <header>
-      <h1>📋 Opower GYM Rules 💪</h1>
+      <h1>📋 Opower GYM Rules / قوانين 💪</h1>
     </header>
 
     <!-- Navigation -->
